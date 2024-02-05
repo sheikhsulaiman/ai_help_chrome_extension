@@ -1,0 +1,31 @@
+{
+  "manifest_version": 3,
+  "name": "OpenAI Chat Extension",
+  "version": "1.0",
+  "description": "An extension to open chat.openai.com in a new tab",
+  "permissions": ["tabs", "activeTab", "contextMenus", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.openai.com/*",
+        "https://bard.google.com/chat/*"
+      ],
+      "js": ["content-script.js"]
+    }
+  ],
+  "action": {
+    "default_icon": "icon.png"
+  },
+  "host_permissions": [
+    "https://chat.openai.com/*",
+    "https://bard.google.com/chat/*"
+  ]
+}
