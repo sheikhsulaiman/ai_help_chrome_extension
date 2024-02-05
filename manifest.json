@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "AI Help Chat Extension",
+  "name": "AI Help - GPT & Bard",
   "version": "1.0",
   "description": "An extension to send selection to AI Chat in a new tab",
   "permissions": ["tabs", "activeTab", "contextMenus", "scripting"],
