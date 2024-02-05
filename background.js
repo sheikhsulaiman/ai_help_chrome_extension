@@ -1,13 +1,13 @@
 // background.js
 
 chrome.contextMenus.create({
-  id: "openChatMenuItem",
+  id: "aiHelpMenuItem",
   title: "Chat with ChatGPT",
   contexts: ["selection"],
 });
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
-  if (info.menuItemId === "openChatMenuItem") {
+  if (info.menuItemId === "aiHelpMenuItem") {
     var selectedText = info.selectionText.trim();
     if (selectedText) {
       // Open a new tab with the ChatGPT website
