@@ -1,4 +1,7 @@
-# AI Help Chat Extension
+<div style="display: flex; align-items: center;">
+    <img src="icon.png" alt="Get AI Help" style="height: 1.5em;">
+    <h1 style="margin-left: 10px;">AI Help Chat Extension</h1>
+</div>
 
 This Chrome extension allows users to quickly fill the chat input field on the ChatGPT and Google Bard website with selected text from any webpage.
 
@@ -12,8 +15,10 @@ This Chrome extension allows users to quickly fill the chat input field on the C
 To install the extension, follow these steps:
 
 1. Clone the repository to your local machine:
-   ```bash
+
+```bash
 git clone https://github.com/sheikhsulaiman/ai_help_chrome_extension.git
+```
 
 3. Open Google Chrome and navigate to `chrome://extensions/`.
 
@@ -48,5 +53,3 @@ This project is licensed under the [MIT License](LICENSE).
 ## Acknowledgements
 
 - This project was inspired by the need for a quick way to chat with ChatGPT and Google Bard using selected text from web pages.
-
-
