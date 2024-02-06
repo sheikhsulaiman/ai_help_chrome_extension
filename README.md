@@ -14,6 +14,7 @@ To install the extension, follow these steps:
 1. Clone the repository to your local machine:
    ```bash
 git clone https://github.com/sheikhsulaiman/ai_help_chrome_extension.git
+
 3. Open Google Chrome and navigate to `chrome://extensions/`.
 
 4. Enable Developer mode by toggling the switch in the top right corner.
