@@ -1,7 +1,4 @@
-<div style="display: flex; align-items: center;">
-    <img src="icon.png" alt="Get AI Help" style="height: 1.5em;">
-    <h1 style="margin-left: 10px;">AI Help Chat Extension</h1>
-</div>
+# AI Help Chat Extension
 
 This Chrome extension allows users to quickly fill the chat input field on the ChatGPT and Google Bard website with selected text from any webpage.
 
