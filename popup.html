@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Help</title>
+    <link href="./popup.css" rel="stylesheet" />
+    <script src="popup.js" defer></script>
+  </head>
+  <body class="w-56">
+    <main
+      class="container flex items-center justify-center p-6 flex-col space-y-2"
+    >
+      <img class="h-20 w-20" src="./icon.png" alt="AI Help" />
+      <div class="flex gap-2">
+        <a
+          href="https://chat.openai.com/"
+          target="_blank"
+          class="bg-black text-white font-bold p-2 rounded-md hover:bg-slate-900 hover:scale-110 transition-all"
+        >
+          Chat Gpt
+        </a>
+        <a
+          href="https://gemini.google.com/app"
+          target="_blank"
+          class="bg-black text-white font-bold p-2 rounded-md hover:bg-slate-900 hover:scale-110 transition-all"
+        >
+          Gemini
+        </a>
+      </div>
+      <div class="flex gap-2">
+        <form class="space-y-2">
+          <div class="flex items-center gap-2">
+            <input
+              class="h-4 w-4 hover:cursor-pointer"
+              type="checkbox"
+              name="new-tab"
+              id="new-tab"
+            />
+            <label class="hover:cursor-pointer" for="new-tab"
+              >Always new tab Mode</label
+            ><br />
+          </div>
+          <div class="flex items-center gap-2">
+            <input
+              class="h-4 w-4 hover:cursor-pointer"
+              type="checkbox"
+              name="auto-submit"
+              value="Car"
+              id="auto-submit"
+            />
+            <label class="hover:cursor-pointer" for="auto-submit">
+              Auto Submit Mode</label
+            ><br />
+          </div>
+          <input
+            class="bg-green-700 min-w-full text-white font-bold p-2 rounded-md hover:bg-green-500 hover:scale-110 transition-all"
+            type="submit"
+            value="Submit"
+          />
+        </form>
+      </div>
+      <p>
+        Made with <span class="text-red-600">♥</span> by
+        <a
+          href="https://github.com/sheikhsulaiman"
+          target="_blank"
+          class="text-purple-500"
+          >SULAIMAN</a
+        >
+      </p>
+    </main>
+  </body>
+</html>
