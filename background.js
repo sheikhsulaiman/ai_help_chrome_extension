@@ -1,6 +1,5 @@
 // background.js
 
-let isAutoSubmit = false;
 let isNewTab = false;
 
 chrome.contextMenus.create({
@@ -12,12 +11,6 @@ chrome.contextMenus.create({
 // Listening for messages from the popup script
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   // You can process the message here
-  if (request.isAutoSubmit) {
-    isAutoSubmit = request.isAutoSubmit;
-    // sendResponse({farewell: "Goodbye from background.js!"});
-  } else {
-    isAutoSubmit = false;
-  }
   if (request.isNewTab) {
     isNewTab = request.isNewTab;
   } else {
@@ -30,7 +23,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
     var selectedText = info.selectionText.trim();
     if (selectedText) {
       chrome.tabs.query(
-        { url: "https://chat.openai.com/*/*" || "https://chat.openai.com" },
+        { url: "https://chat.openai.com/*/*" || "https://chat.openai.com/" },
         function (tabs) {
           if (tabs.length > 0 && !isNewTab) {
             var tabId = tabs[0].id; // Get the ID of the first tab where the website is open
