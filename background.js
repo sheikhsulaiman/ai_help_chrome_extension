@@ -1,9 +1,28 @@
 // background.js
 
+let isAutoSubmit = false;
+let isNewTab = false;
+
 chrome.contextMenus.create({
   id: "aiHelpMenuItem",
   title: "Get AI Help",
   contexts: ["selection"],
+});
+
+// Listening for messages from the popup script
+chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+  // You can process the message here
+  if (request.isAutoSubmit) {
+    isAutoSubmit = request.isAutoSubmit;
+    // sendResponse({farewell: "Goodbye from background.js!"});
+  } else {
+    isAutoSubmit = false;
+  }
+  if (request.isNewTab) {
+    isNewTab = request.isNewTab;
+  } else {
+    isNewTab = false;
+  }
 });
 
 chrome.contextMenus.onClicked.addListener(function (info, tab) {
@@ -13,7 +32,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
       chrome.tabs.query(
         { url: "https://chat.openai.com/*/*" || "https://chat.openai.com" },
         function (tabs) {
-          if (tabs.length > 0) {
+          if (tabs.length > 0 && !isNewTab) {
             var tabId = tabs[0].id; // Get the ID of the first tab where the website is open
             // You can perform further actions here if the website is open.
             chrome.tabs.get(tabId, (currenrtTabData) => {
@@ -57,7 +76,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
       chrome.tabs.query(
         { url: "https://gemini.google.com/app/*" },
         function (tabs) {
-          if (tabs.length > 0) {
+          if (tabs.length > 0 && !isNewTab) {
             var tabId = tabs[0].id; // Get the ID of the first tab where the website is open
             // You can perform further actions here if the website is open.
             chrome.tabs.get(tabId, (currenrtTabData) => {
@@ -70,7 +89,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
                 chrome.tabs.sendMessage(tabId, {
                   selectedText: selectedText,
                 });
-              }, 3000);
+              }, 4000);
             });
           } else {
             // Open a new tab with the Bard website
@@ -80,7 +99,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
                 chrome.tabs.get(newTab.id, (currenrtTabData) => {
                   if (
                     currenrtTabData.pendingUrl ===
-                    "https://gemini.google.com/app/"
+                    "https://gemini.google.com/app"
                   ) {
                     chrome.scripting.executeScript({
                       target: { tabId: currenrtTabData.id },
