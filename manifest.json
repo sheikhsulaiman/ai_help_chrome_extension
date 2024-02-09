@@ -16,7 +16,7 @@
     {
       "matches": [
         "https://chat.openai.com/*",
-        "https://bard.google.com/chat/*"
+        "https://gemini.google.com/app/*"
       ],
       "js": ["content-script.js"]
     }
@@ -26,6 +26,6 @@
   },
   "host_permissions": [
     "https://chat.openai.com/*",
-    "https://bard.google.com/chat/*"
+    "https://gemini.google.com/app/*"
   ]
 }

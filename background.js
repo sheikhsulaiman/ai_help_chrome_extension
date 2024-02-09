@@ -55,7 +55,7 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
       );
 
       chrome.tabs.query(
-        { url: "https://bard.google.com/chat/*" },
+        { url: "https://gemini.google.com/app/*" },
         function (tabs) {
           if (tabs.length > 0) {
             var tabId = tabs[0].id; // Get the ID of the first tab where the website is open
@@ -75,12 +75,12 @@ chrome.contextMenus.onClicked.addListener(function (info, tab) {
           } else {
             // Open a new tab with the Bard website
             chrome.tabs.create(
-              { url: "https://bard.google.com/chat" },
+              { url: "https://gemini.google.com/app" },
               function (newTab) {
                 chrome.tabs.get(newTab.id, (currenrtTabData) => {
                   if (
                     currenrtTabData.pendingUrl ===
-                    "https://bard.google.com/chat"
+                    "https://gemini.google.com/app/"
                   ) {
                     chrome.scripting.executeScript({
                       target: { tabId: currenrtTabData.id },
